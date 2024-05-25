@@ -1,12 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import Body from './components/Body';
 
 function App() {
-  return (
-    <div className=''>
-    <h1  className="text-6xl "> hello everbody</h1> 
-    </div>
-  );
+  return <Body />
 }
 
 export default App;
