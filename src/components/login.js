@@ -6,8 +6,13 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import {  signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { Navigate, useNavigate } from "react-router-dom";
+import {  updateProfile } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { adduser } from "../utils/userslice";
+
 const Login = () => {
-  const [islogin, setislogin] = useState(true);
+  const dispatch=useDispatch();
+    const [islogin, setislogin] = useState(true);
   const [showmessage, setshowmessage] = useState("");
   const navigate=useNavigate();
   const handleclick = () => {
@@ -22,9 +27,22 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed up
+          console.log(auth.currentUser,"hello")
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse")
+          console.log(user,"hi");
+          updateProfile(user, {
+            displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/132159855?s=400&u=0901b4fc467f3238f1487f5f0ac73dc1ae401665&v=4"
+          }).then(() => {
+            // Profile updated!
+            // ...
+            const { uid, email, displayName,photoURL } = auth.currentUser;
+            dispatch(adduser({ uid: uid, email: email, displayName: displayName,photoURL:photoURL }));
+
+          }).catch((error) => {
+            // An error occurred
+            // ...
+          });
+        
           // ...
         })
         .catch((error) => {
@@ -40,9 +58,10 @@ const Login = () => {
         password.current.value)
   .then((userCredential) => {
     // Signed in 
+    
     const user = userCredential.user;
-    console.log(user);
-    navigate("/")
+    
+   
     // ...
   })
   .catch((error) => {
@@ -56,6 +75,7 @@ const Login = () => {
   };
   const email = useRef(null);
   const password = useRef(null);
+  const name=useRef(null);
   const handleset = () => {
     setislogin(!islogin);
   };
@@ -76,7 +96,7 @@ const Login = () => {
         {islogin ? (
           ""
         ) : (
-          <input
+          <input ref={name}
             className="my-2 p-3 w-80   mx-2 rounded bg-gray-200   "
             type="text"
             placeholder="Full Name"
