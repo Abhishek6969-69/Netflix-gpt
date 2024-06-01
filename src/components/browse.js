@@ -17,16 +17,16 @@ const Browse = () => {
   
 
   return (
-    <div className="  " >
-      <div className=" flex-col  bg-gradient-to-b from-black  ">
-       {page?<Gptssearch/>:<><div className="bg-gradient-to-b from-black  ">
+    <div className=" h-screen  " >
+      <div className=" flex  bg-gradient-to-b from-black  ">
+       <div className="bg-gradient-to-b from-black  ">
           <Maincontainer />
         </div>
-        <div className=" mt-[215px] w-[380px]    md:h-screen md:w-screen md:mt-[630px]">
+        <div className=" mt-[215px] w-[360px]     md:h-screen md:w-screen md:mt-[630px]">
         <SecondaryContainer />
         </div>
-        </> 
-        }
+         
+        
        
       </div>
       

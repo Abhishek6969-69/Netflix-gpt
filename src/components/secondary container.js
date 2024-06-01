@@ -10,8 +10,11 @@ function SecondaryContainer() {
    useUpcomming();
    useRealNowplaying();
     return (
-       <div className=' bg-black  '>
+       <div className=' bg-black   '>
        
+        <Movielist title={"Popular"} movielist={movie.NowPlayingMovie} />
+        <Movielist title={"TopRated"} movielist={movie. Toprated} />
+        <Movielist title={"Upcomming"} movielist={movie.Upcomming} />
         <Movielist title={"Popular"} movielist={movie.NowPlayingMovie} />
         <Movielist title={"TopRated"} movielist={movie. Toprated} />
         <Movielist title={"Upcomming"} movielist={movie.Upcomming} />

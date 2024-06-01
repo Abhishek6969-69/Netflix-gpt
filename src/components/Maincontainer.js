@@ -29,17 +29,15 @@ function Maincontainer() {
   }
   useMovies()
   return (
-    <div className="   ">
+    <div className=" h-screen  ">
       <div className="flex justify-between   ">
-        <div className="   bg-black  ">
+        <div className="    bg-black  ">
           <Header />
-          <div  className="relative ">
-            <button className=" w-24  p-2  absolute mt-4  mx-[980px]  mr-0  rounded-lg   bg-blue-600   z-50   capitalize" onClick={handlegptsearch}>Gptsearch</button>
-          </div>
+          
         </div>
         
         <div className="flex  ml-[210px]  absolute z-40 md:flex md:z-40 md:mx-[1100px]  ">
-          <div className="hidden md:none mx-3">
+          <div className="hidden md:inline-block mx-3">
           {store && store.photoURL && (
             <img
               className=" rounded-full w-8 mt-3 mr-2  md:rounded-full md:w-16 md:mt-4 md:mr-10"
