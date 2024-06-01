@@ -39,10 +39,10 @@ function Videoplaying() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="  ">
+    <div className="   ">
       {trailer ? (
         <iframe
-          className="w-screen  aspect-video bg-gradient-to-b from-black "
+          className=" w-[380px]    md:w-screen  aspect-video bg-gradient-to-r from-black "
           src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"

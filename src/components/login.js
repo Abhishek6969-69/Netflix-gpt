@@ -83,12 +83,12 @@ const Login = () => {
     <div className=" ">
       <Header />
       <div className=" absolute">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/a99688ca-33c3-4099-9baa-07a2e2acb398/ca15fd28-b624-4852-8bfe-9cdd5c88475d/IN-en-20240520-popsignuptwoweeks-perspective_alpha_website_medium.jpg" />
+        <img className=" h-screen object-cover" src="https://assets.nflxext.com/ffe/siteui/vlv3/a99688ca-33c3-4099-9baa-07a2e2acb398/ca15fd28-b624-4852-8bfe-9cdd5c88475d/IN-en-20240520-popsignuptwoweeks-perspective_alpha_website_medium.jpg" />
       </div>
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute left-0 right-0  w-[400px] mx-auto my-auto text-black mt-40 ml-6/12 p-12 bg-black opacity-80 "
+        className="absolute left-0 right-8 w-[260px] mx-auto  md:w-[400px] md:mx-auto my-auto text-black mt-40 md:ml-6/12 p-12 bg-black opacity-80 "
       >
         <h1 className="my-3  mx-4  font-bold text-4xl text-white">
           {islogin ? "Sign In" : "Sign Up"}
@@ -97,32 +97,32 @@ const Login = () => {
           ""
         ) : (
           <input ref={name}
-            className="my-2 p-3 w-80   mx-2 rounded bg-gray-200   "
+            className=" mx-0 my-2 w-52 p-2  md:my-2 md:p-3    md:w-80  md:mx-2 rounded bg-gray-200   "
             type="text"
             placeholder="Full Name"
           />
         )}
         <input
           ref={email}
-          className="my-2 p-3 w-80   mx-2 rounded bg-gray-200   "
+          className="  mx-0 my-2 w-52 p-2 md:my-2 md:p-3 md:w-80   md:mx-2 rounded bg-gray-200   "
           type="text"
           placeholder="Email"
         />
         <input
           ref={password}
-          className="my-2 p-3 w-80   mx-2 rounded  "
+          className=" mx-0 my-2 w-52 p-2 md:my-2 md:p-3 md:w-80   md:mx-2 rounded  "
           type="password"
           placeholder="Password"
         />
         <p className=" text-red-600 p-2 mx-2 capitalize ">{showmessage}</p>
         <button
-          className="   w-80 mt-5   mx-2 p-3 rounded bg-red-700  "
+          className="  mx-0 my-2 w-52 p-2  md:w-80 md:mt-5   md:mx-2 md:p-3 rounded bg-red-700  "
           onClick={handleclick}
         >
           {islogin ? "Sign In" : "Sign Up"}
         </button>
         <p
-          className="mx-4 mt-4 cursor-pointer z-40 text-white"
+          className=" text-[8px] md:text-lg mx-4 mt-4 cursor-pointer z-40 text-white"
           onClick={handleset}
         >
           {islogin

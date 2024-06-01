@@ -8,7 +8,7 @@ function Movielist({ movielist, title }) {
   return (
     <div className="  text-white">
       <div>
-        <h1>{title}</h1>
+        <h1 className="m-3 font-bold">{title}</h1>
         <div className=" flex  overflow-x-scroll gap-5    ">
           {movielist &&
             movielist.map((c) => (
